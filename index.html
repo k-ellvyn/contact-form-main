@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <title>Frontend Mentor | Contact form</title>
+</head>
+
+<body>
+  <main class="app">
+    <h1 class="title">Contact Us</h1>
+    
+    <form action="" class="contact-form">
+      <div class="flex">
+        <div class="field">
+          <label for="first-name" class="field-name">First Name</label>
+          <input type="text" name="firstName" class="field-input" id="first-name">
+          <p class="error-state" data-disabled>This field is required</p>
+        </div>
+
+        <div class="field">
+          <label for="last-name" class="field-name">Last Name</label>
+          <input type="text" name="lastName" class="field-input" id="last-name">
+          <p class="error-state" data-disabled>This field is required</p>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email" class="field-name">Email Address</label>
+        <input type="email" name="emailAddress" class="field-input" id="email">
+        <p class="error-state" data-disabled>Please enter a valid email address</p>
+      </div>
+
+      <div class="field">
+        <p class="field-name">Query Type</p>
+
+        <div class="flex">
+          <div class="field-input | flex">
+            <label for="general-enquiry">General Enquiry</label>
+            <input type="radio" name="queryType" class="radio-btn" id="general-enquiry">
+          </div>
+          
+          <div class="field-input | flex">
+            <label for="support-request">Support Request</label>
+            <input type="radio" name="queryType" class="radio-btn" id="support-request">
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea name="message" class="field-input" id="message" cols="30" rows="10"></textarea>
+      </div>
+
+      <div class="consent">
+        
+        <p>I consent to being contacted by the team</p>
+        <input type="checkbox" name="consentCheck" class="" id="consent-check">
+      </div>
+
+      <button type="submit" class="primary-btn">Submit</button>
+    </form>
+  </main>
+
+  
+  First Name
+  This field is required
+
+  Last Name
+  This field is required
+
+  Email Address
+  Please enter a valid email address
+  This field is required
+
+  Query Type
+  General Enquiry
+  Support Request
+  Please select a query type
+
+  Message
+  This field is required
+
+  I consent to being contacted by the team
+  To submit this form, please consent to being contacted
+
+  Submit
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
