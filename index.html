@@ -7,93 +7,87 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./css/styles.css">
 
+  <script type="module" src="./js/main.js" defer></script>
+
   <title>Frontend Mentor | Contact form</title>
 </head>
 
 <body>
-  <main class="app">
-    <h1 class="title">Contact Us</h1>
+  <main>
+    <div hidden class="success-message">
+      <p class="bold flex ai-c" data-spacing="2xs">
+        <svg class="success-icon"><use xlink:href="./assets/images/icon-success-check.svg#success-icon" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg>
+        <span>Message Sent!</span>
+      </p>
+
+      <p class="fs-300">Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+
+    <div class="form-wrapper">
+      <h1 class="title">Contact Us</h1>
     
-    <form action="" class="contact-form">
-      <div class="flex">
-        <div class="field">
-          <label for="first-name" class="field-name">First Name</label>
-          <input type="text" name="firstName" class="field-input" id="first-name">
-          <p class="error-state" data-disabled>This field is required</p>
-        </div>
-
-        <div class="field">
-          <label for="last-name" class="field-name">Last Name</label>
-          <input type="text" name="lastName" class="field-input" id="last-name">
-          <p class="error-state" data-disabled>This field is required</p>
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="email" class="field-name">Email Address</label>
-        <input type="email" name="emailAddress" class="field-input" id="email">
-        <p class="error-state" data-disabled>Please enter a valid email address</p>
-      </div>
-
-      <div class="field">
-        <p class="field-name">Query Type</p>
-
-        <div class="flex">
-          <div class="field-input | flex">
-            <label for="general-enquiry">General Enquiry</label>
-            <input type="radio" name="queryType" class="radio-btn" id="general-enquiry">
+      <form action="/" class="contact-form" id="contact-form" novalidate>
+        <div class="flex responsive-flex">
+          <div class="field">
+            <label for="firstName" class="field-name">First Name <span aria-hidden>*</span></label>
+            <input type="text" name="firstName" class="field-input text-box" id="firstName" data-required placeholder="" autocomplete="given-name" value  data-defaultvalue="">
+            <p class="error-state" >This field is required</p>
           </div>
+
+          <div class="field">
+            <label for="lastName" class="field-name">Last Name <span aria-hidden>*</span></label>
+            <input type="text" name="lastName" class="field-input text-box" id="lastName" data-required placeholder="" autocomplete="family-name" value  data-defaultvalue="">
+            <p class="error-state">This field is required</p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email" class="field-name">Email Address <span aria-hidden>*</span></label>
+          <input type="email" name="emailAddress" class="field-input text-box" id="email" data-required placeholder="" autocomplete="email" value data-defaultvalue="">
+          <p class="error-state">Please enter a valid email address</p>
+        </div>
+
+        <div class="field">
+          <p class="field-name">Query Type <span aria-hidden>*</span></p>
           
-          <div class="field-input | flex">
-            <label for="support-request">Support Request</label>
-            <input type="radio" name="queryType" class="radio-btn" id="support-request">
+          <div class="flex wrap">
+            <div class="field-input field-input-lg | flex reverse ai-c" data-spacing="xs">
+              <label for="generalEnquiry" class="field-name">General Enquiry</label>
+              <input type="radio" name="queryType" class="radio-btn" id="generalEnquiry" data-required  data-defaultvalue="">
+            </div>
+            
+            <div class="field-input field-input-lg | flex reverse ai-c" data-spacing="xs">
+              <label for="supportRequest" class="field-name">Support Request</label>
+              <input type="radio" name="queryType" class="radio-btn" id="supportRequest" data-required data-defaultvalue="">
+            </div>
           </div>
+
+          <p class="error-state">Please select a query type</p>
         </div>
-      </div>
 
-      <div class="field">
-        <label for="message">Message</label>
-        <textarea name="message" class="field-input" id="message" cols="30" rows="10"></textarea>
-      </div>
+        <div class="field">
+          <label for="message" class="field-name">Message <span aria-hidden>*</span></label>
+          <textarea name="message" class="field-input text-box" id="message" cols="0" rows="4" placeholder="" data-required data-defaultvalue=""></textarea>
+          <p class="error-state">This field is required</p>
+        </div>
 
-      <div class="consent">
-        
-        <p>I consent to being contacted by the team</p>
-        <input type="checkbox" name="consentCheck" class="" id="consent-check">
-      </div>
+        <div class="field">
+          <div class="field-input | flex reverse no-border ai-c">
+            <label for="consentCheck" class="field-name">I consent to being contacted by the team <span aria-hidden>*</span></label>
+            <input type="checkbox" name="consentCheck" class="checkbox-btn no-fill" id="consentCheck" data-required data-defaultvalue=false>
+          </div>
 
-      <button type="submit" class="primary-btn">Submit</button>
-    </form>
+          <p class="error-state">To submit this form, please consent to being contacted</p>
+        </div>
+
+        <button type="submit" class="primary-btn">Submit</button>
+      </form>
+    </div>
   </main>
-
   
-  First Name
-  This field is required
-
-  Last Name
-  This field is required
-
-  Email Address
-  Please enter a valid email address
-  This field is required
-
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
-
-  Message
-  This field is required
-
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
 </html>
